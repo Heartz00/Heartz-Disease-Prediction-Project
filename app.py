@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 # create flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # load the model
 model = pickle.load(open('log_regression.pkl', "rb"))
