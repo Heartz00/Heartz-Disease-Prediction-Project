@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+h1 {
+    font-family:  'Muli', sans-serif;
+    color : rgb(70, 70, 187);
+    font-size:50px
+}
+
+body {
+    background :#eeecec;
+    
+    
+}
+#demo{
+    font-size:30px;
+    color : rgb(45, 45, 209);
+
+}
+
