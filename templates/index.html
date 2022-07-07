@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><!--From https://codepen.io/frytyler/pen/EGdtg--><head>
+    <meta charset="UTF-8">
+    <link href ="{{ url_for('static', filename='css/style.css')}}" rel = "stylesheet ">
+    <title>ML API</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+
+    
+  </head>
+
+  <body>
+    <style>
+        
+        </style>
+    <div class="login" >
+        <h1>Heart Disease Prediction</h1>
+        <P>Kindly, fill the form below</P>
+        <div style="text-align: center;">
+        <img src="{{url_for('static', filename='image/Health.png')}}"
+        width =300 height="300">
+        </div>
+        <br/>
+        {{ Result }} <br/>
+        <p id = "demo"></p> This is an heart prediction checkup form</p>
+    <script src = "{{url_for('static', filename='js/myfile.js')}}"></script>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+         <p>age</p>
+        <input type="text" name="age" placeholder="age" required="">
+        <p>sex</p>
+        <input type="text" name="sex" placeholder="sex" required="">
+        <br><p>chest pain</p>
+        <input type="text" name="cp" placeholder="chest pain" required="">
+        <br><p>resting blood pressures</p>
+        <input type="text" name="trestbps" placeholder="resting blood pressures" required="">
+        <br><p>serum cholesterol (mg/dl)</p>
+        <input type="text" name="chol" placeholder="serum cholesterol (mg/dl)" required="">
+        <br><p>fasting blood sugar(120_mg_dl)</p>
+        <input type="text" name="fbs" placeholder="fasting blood sugar(120_mg_dl)" required="">
+        <br><p>resting electrocardiographic result</p>
+        <input type="text" name="restecg" placeholder="resting_electrocardiographic_result" required="">
+        <br><p>maximum heart_rate</p>
+        <input type="text" name="thalach" placeholder="maximum_heart_rate" required="">
+        <br><p>exercise induced angina</p>
+        <input type="text" name="exang" placeholder="exercise_induced_angina" required="">
+        <br><p>oldpeak ST depression10 induced by exercise relative to rest</p>
+        <input type="text" name="oldpeak" placeholder="oldpeak_ST_depression10_induced_by_exercise_relative_to_rest" required="">
+        <br><p>slope of the peak exercise relative to rest</p>
+        <input type="text" name="slope" placeholder="slope_of_the_peak_exercise_relative_to_rest" required="">
+        <br><p>number of major vessels colored by fluoroscopypy</p>
+        <input type="text" name="ca" placeholder="number_of_major_vessels_colored_by_fluoroscopypy" required="">
+        <br><p>thal</p>
+        <input type="text" name="thal" placeholder="thal" required="">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+
+      <br>
+      <br>
+
+      {{ Result }}
+    </div>
+  
+
+</body></html>
